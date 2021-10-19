@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import './services.css'
 
 const Services = (props) => {
+
+        // destructuring data 
    
         const{id, name, image, fee, describe}=props.service
    

@@ -22,3 +22,14 @@
 margin: 10px;
     
 }
+
+@media only screen and (max-width: 640px){
+
+    .body-size{
+        width: 300px;
+    }
+    .dr-img{
+    margin: 10px;
+        
+    }
+}

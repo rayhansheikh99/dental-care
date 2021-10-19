@@ -9,6 +9,8 @@ import './footer.css'
 const Footer = () => {
     return (
         <div>
+
+          {/* footer section  */}
             <div className="footer-container">
         <div className="container">
           <div className="row">

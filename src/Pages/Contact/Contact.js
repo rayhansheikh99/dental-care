@@ -12,8 +12,8 @@ const Contact = () => {
             <Container >
              <Row>
               
-                <Col xs={6}><iframe src="https://maps.google.com/maps?q=dhanmondi,%20dhaka&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="1" style={{"border":'1px', "height":"400px", "weight":"400px"}} allowfullscreen></iframe></Col>
-                <Col xs={6}>
+                <Col sm={6} xs={12}><iframe src="https://maps.google.com/maps?q=dhanmondi,%20dhaka&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="1" style={{"border":'1px', "height":"400px", "weight":"400px"}} allowfullscreen></iframe></Col>
+                <Col sm={6} xs={12}>
                 <h4>Please leave your message here:</h4>
                 <form action="#" method="POST">
 

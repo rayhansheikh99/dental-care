@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import './servicedetails.css'
 
 const ServiceDetails = () => {
+    // dynamic route 
     let {serviceId} = useParams()
     const [service, setService]= useState([])
     const [singleService, setSingleService] = useState({});
@@ -13,6 +14,7 @@ const ServiceDetails = () => {
         .then(data => setService(data.services))
     },[])
 
+    //  data  fetch
     useEffect(()=>{
         const foundService = service.find(
             (services)=>services.id===serviceId);

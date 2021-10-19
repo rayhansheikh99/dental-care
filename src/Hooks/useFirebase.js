@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import initializeAuthentication from "../Pages/Header/Firebase/firebase.init";
 
 initializeAuthentication();
-
+// hooks here all 
 const useFirebase = ()=>{
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -12,6 +12,8 @@ const useFirebase = ()=>{
     const [user,setUser]=useState({});
     const [isLoading, setIsLoading] = useState(true);
 
+
+    // google sign in 
     const provider = new GoogleAuthProvider()
     const auth = getAuth();
     const history = useHistory();
@@ -28,6 +30,7 @@ const useFirebase = ()=>{
 
     }
 
+    // email password sign in 
     const handleEmailChange = e =>{
         setEmail(e.target.value);
     }
@@ -79,6 +82,8 @@ const useFirebase = ()=>{
         });
         return ()=> unsubscribed;
     },[])
+
+    // log out 
 
     const logOut = () => {
         setIsLoading(true);

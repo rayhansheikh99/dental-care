@@ -8,7 +8,7 @@ import Services from '../Services/Services';
 const Home = () => {
 
     const [services, setServices]=useState([])
-
+    // data fetch 
     useEffect(()=>{
         fetch('/services.json')
         .then(res=>res.json())
