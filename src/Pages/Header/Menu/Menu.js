@@ -36,7 +36,7 @@ const Menu = () => {
       <Nav.Link as={Link} to="/login">Login</Nav.Link>}
     </Nav>
       <Navbar.Text>
-        Signed in as: <a href="#login">{user?.displayName}</a>
+        Signed in as: {user?.displayName}
       </Navbar.Text>
     
   </Navbar.Collapse>
