@@ -14,10 +14,14 @@ import Error from './Pages/Error/Error';
 import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
 import Login from './Pages/Header/Login/Login';
 import SignUp from './Pages/Header/SignUp/SignUp';
+import AuthProvider from './Contexts/AuthProvider';
+import PrivateRoute from './Pages/Header/Login/PrivateRoute/PrivateRoute';
+
 
 function App() {
   return (
     <div className="App">
+     <AuthProvider>
      <Router>
      <Menu/>
        <Switch>
@@ -43,15 +47,16 @@ function App() {
             <SignUp/>
          </Route>
 
-         <Route exact path='/servicedetails/:serviceId'>
+         <PrivateRoute exact path='/servicedetails/:serviceId'>
             <ServiceDetails/>
-         </Route>
+         </PrivateRoute>
          <Route path='*'>
             <Error/>
          </Route>
        </Switch>
        <Footer/>
      </Router>
+     </AuthProvider>
     </div>
   );
 }

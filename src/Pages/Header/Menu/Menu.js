@@ -1,9 +1,12 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
 import logo from '../../../images/logo/dental_square.png'
 
 const Menu = () => {
+
+  const {user, logOut} = useAuth();
     return (
         <div>
             <Navbar fixed="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -28,12 +31,12 @@ const Menu = () => {
       
     </Nav>
     <Nav>
-      <Nav.Link as={Link} to="/login">Login</Nav.Link>
-      <Nav.Link as={Link} to="/signup">Sign Up</Nav.Link>
-      <Nav.Link as={Link} to="/login" className='me-5'>Logout</Nav.Link>
+      {user?.email?
+       <Nav.Link onClick={logOut} as={Link} to="/login" className='me-5'>Logout</Nav.Link>:
+      <Nav.Link as={Link} to="/login">Login</Nav.Link>}
     </Nav>
       <Navbar.Text>
-        Signed in as: <a href="#login">Mark Otto</a>
+        Signed in as: <a href="#login">{user?.displayName}</a>
       </Navbar.Text>
     
   </Navbar.Collapse>
