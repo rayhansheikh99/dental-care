@@ -12,6 +12,8 @@ import About from './Pages/About/About';
 import AllService from './Pages/AllService/AllService';
 import Error from './Pages/Error/Error';
 import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
+import Login from './Pages/Header/Login/Login';
+import SignUp from './Pages/Header/SignUp/SignUp';
 
 function App() {
   return (
@@ -34,7 +36,14 @@ function App() {
          <Route path='/contact'>
             <Contact/>
          </Route>
-         <Route path='/servicedetails/:serviceId'>
+         <Route path='/login'>
+            <Login/>
+         </Route>
+         <Route path='/signup'>
+            <SignUp/>
+         </Route>
+
+         <Route exact path='/servicedetails/:serviceId'>
             <ServiceDetails/>
          </Route>
          <Route path='*'>

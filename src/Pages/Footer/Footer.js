@@ -2,7 +2,7 @@ import { faFacebookSquare, faInstagramSquare, faTwitterSquare, faYoutube } from 
 import { faMapMarkedAlt, faPhoneSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Button, Nav, NavLink } from 'react-bootstrap';
+import { Button, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './footer.css'
 
