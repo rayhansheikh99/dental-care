@@ -1,7 +1,6 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut} from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-// import { useEffect} from "react";
 import initializeAuthentication from "../Pages/Header/Firebase/firebase.init";
 
 initializeAuthentication();
@@ -58,7 +57,6 @@ const useFirebase = ()=>{
         history.push("/home")
         signInWithEmailAndPassword(auth, email, password)
         .then((result) => {
-            // Signed in 
             const user = result.user;
             console.log(user)
           })
