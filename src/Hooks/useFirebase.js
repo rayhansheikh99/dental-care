@@ -1,11 +1,11 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut} from "firebase/auth";
+import { getAuth, updateProfile, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut} from "firebase/auth";
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
 import initializeAuthentication from "../Pages/Header/Firebase/firebase.init";
 
 initializeAuthentication();
 // hooks here all 
 const useFirebase = ()=>{
+    const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
@@ -16,21 +16,24 @@ const useFirebase = ()=>{
     // google sign in 
     const provider = new GoogleAuthProvider()
     const auth = getAuth();
-    const history = useHistory();
+ 
+    
+   
 
     const loginWithGoogle = () => {
         setIsLoading(true);
-        history.push("/home")
-        signInWithPopup(auth, provider)
+       return signInWithPopup(auth, provider);
               
-            .then((result) => setUser(result.user))
-            .finally(() => setIsLoading(false))
-            .catch((error) => alert(error.message))
-           
+            
 
     }
 
     // email password sign in 
+
+
+    const handleNameChange = e =>{
+        setName(e.target.value);
+    }
     const handleEmailChange = e =>{
         setEmail(e.target.value);
     }
@@ -40,7 +43,6 @@ const useFirebase = ()=>{
   
     const handleRegistration = e => {
         e.preventDefault();
-        history.push("/home")
         if(password.length<6){
             setError('must be 6 character')
             return;
@@ -51,13 +53,20 @@ const useFirebase = ()=>{
             const user = result.user;
             console.log(user)
             setError('')
+            window.location.reload()
+            setUserName();
         })
         .catch((error) => setError(error.message));
     }
 
+    const setUserName = () => {
+        updateProfile(auth.currentUser,{displayName: name})
+        .then(result =>{})
+    }
+
     const handleSignIn = (e) =>{
+        setIsLoading(true);
         e.preventDefault();
-        history.push("/home")
         signInWithEmailAndPassword(auth, email, password)
         .then((result) => {
             const user = result.user;
@@ -100,7 +109,8 @@ const useFirebase = ()=>{
         handlePasswordChange,
         handleRegistration,
         error,
-        handleSignIn
+        handleSignIn,
+        handleNameChange
 
 
         
