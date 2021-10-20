@@ -15,6 +15,9 @@
     border: none;
     border-radius: 20px;
 }
+.btn-desing-all:hover{
+    background-image: linear-gradient(to right, rgb(132, 58, 155), rgba(67, 137, 179, 0.774));
+}
     @media only screen and (max-width: 640px){
     .page-size{
         padding-top: 20%;
