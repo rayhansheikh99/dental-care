@@ -9,7 +9,7 @@ const SignUp = () => {
 
     return (
         <div className='page-size'>
-        <Form onSubmit={handleRegistration}>
+        <Form className='login-form' onSubmit={handleRegistration}>
 <Form.Group className="mb-3">
   
 <Form.Control onBlur={handleNameChange} placeholder="Full Name" required />
@@ -26,12 +26,10 @@ const SignUp = () => {
 <Button className='px-5 btn-desing-all px-5' type="submit" >
 Sign Up
 </Button><br/>
-<Button onClick={loginWithGoogle} className='mt-3 px-5 btn-desing-all' >
-    Sign Up with Google
-  </Button>
-  <Button as={Link} to="/login" className='mt-3 btn-desing-all px-5 ms-2' variant="primary" type="submit">
-    Already Have an Account
-  </Button>
+<p>or Sign Up with</p>
+  <h1 onClick={loginWithGoogle} className='icon-google'>G</h1><br/>
+  
+  <Link to="/login"> Already Have an Account</Link>
 </Form>
     </div>
     );
