@@ -33,7 +33,7 @@ const Footer = () => {
                 </div>
 
                 <p className="mt-5">
-                  <small>DentalSquare &copy; All rights reserved.</small>
+                  <small>Dental Square &copy; All rights reserved.</small>
                 </p>
               </div>
             </div>
