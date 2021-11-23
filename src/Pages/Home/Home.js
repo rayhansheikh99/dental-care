@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Slider from '../Header/Slider/Slider';
 import Services from '../Services/Services';
 
-
-
-
 const Home = () => {
 
     const [services, setServices]=useState([])
